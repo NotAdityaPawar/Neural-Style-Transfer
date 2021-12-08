@@ -1,13 +1,15 @@
 from flask import *
-
+from flask import render_template
 app = Flask(__name__)
 
 
 @app.route('/')
-def Hello():
-    return "Hello world"
+def index():
+    return render_template("home.html")
 
-
+@app.route('/success')
+def success():
+    return render_template("success.html")
 
 if __name__=="__main__":
     app.run()
